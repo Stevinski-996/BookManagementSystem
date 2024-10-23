@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BookstoreManagement.Models.Book>
+
+@{
+    ViewData["Title"] = "Books List";
+}
+
+<h1 class="text-center" style="color: #4A90E2;">Books List</h1>
+
+<p class="text-center">
+    <a asp-action="Create" class="btn" style="background-color: #50E3C2; color: white;">Create New</a>
+</p>
+
+<div class="mb-4 text-center">
+    <form asp-controller="Books" asp-action="Index" method="get" class="form-inline justify-content-center">
+        <label class="mr-2">Find by title, author, or genre:</label>
+        <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control mr-2" style="border: 1px solid #4A90E2;" />
+        <input type="submit" value="Search" class="btn" style="background-color: #50E3C2; color: white;" />
+    </form>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.Author)</th>
+            <th>@Html.DisplayNameFor(model => model.Price)</th>
+            <th>@Html.DisplayNameFor(model => model.Genre)</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
