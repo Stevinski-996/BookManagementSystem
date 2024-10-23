@@ -1,0 +1,28 @@
+﻿@model BookstoreManagement.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center" style="color: #4A90E2;">Book Details</h1>
+<hr style="border-top: 2px solid #50E3C2;" />
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-2" style="color: #333333;">Title</dt>
+            <dd class="col-sm-10">@Model.Title</dd>
+            <dt class="col-sm-2" style="color: #333333;">Author</dt>
+            <dd class="col-sm-10">@Model.Author</dd>
+            <dt class="col-sm-2" style="color: #333333;">Price</dt>
+            <dd class="col-sm-10">@Model.Price</dd>
+            <dt class="col-sm-2" style="color: #333333;">Genre</dt>
+            <dd class="col-sm-10">@Model.Genre</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-lg" style="background-color: #50E3C2; color: white;">Edit</a>
+    <a asp-action="Index" class="btn" style="background-color: #F5A623; color: white;">Back to List</a>
+</div>

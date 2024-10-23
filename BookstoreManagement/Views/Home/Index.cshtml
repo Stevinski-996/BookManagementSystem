@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Bookstore Management";
+}
+
+<div class="jumbotron text-center bg-light" style="background-color: #333333;">
+    <h1 class="display-4" style="color: #4A90E2;">Bookstore Management Made Simplerrrrrrrrrrrrrrrrrrr
+</h1>
+    <p class="lead" style="color: #333333;">Streamline your bookstore operations, manage stock, and add new books with ease.</p>
+    <hr class="my-4" style="border-top: 2px solid #50E3C2;" />
+    <p style="color: #333333;">Effortlessly monitor, update, and manage your collection.</p>
+    <a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Books")" role="button" style="background-color: #50E3C2; color: white;">View Collection</a>
+    <a class="btn btn-success btn-lg" href="@Url.Action("Create", "Books")" role="button" style="background-color: #F5A623; color: white;">Add New Titles</a>
+</div>
+
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <h3 style="color: #333333;">Efficient Inventory Control</h3>
+            <p style="color: #333333;">Easily update and maintain your book catalog.
+
+</p>
+            <a class="btn btn-outline-primary" href="@Url.Action("Index", "Books")" style="border-color: #4A90E2; color: #4A90E2;">Go to Books</a>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h3 style="color: #333333;">Grow Your Collection</h3>
+            <p style="color: #333333;">We ensure your data is protected.</p>
+            <a class="btn btn-outline-success" href="@Url.Action("Create", "Books")" style="border-color: #50E3C2; color: #50E3C2;">Add a Book</a>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h3 style="color: #333333;">Your Data, Our Priority</h3>
+            <p style="color: #333333;">We prioritize your privacy and the security of your data. Learn more about our policies.</p>
+            <a class="btn btn-outline-secondary" href="@Url.Action("Privacy", "Home")" style="border-color: #F5A623; color: #F5A623;">Learn About Our Privacy Practices</a>
+        </div>
+    </div>
+</div>

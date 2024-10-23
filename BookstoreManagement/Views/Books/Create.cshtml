@@ -1,0 +1,51 @@
+﻿@model BookstoreManagement.Models.Book
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center" style="color: #4A90E2;">Create Book</h1>
+
+<h4 class="text-muted text-center">Enter Book Details</h4>
+<hr style="border-top: 2px solid #50E3C2;" />
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Create" class="border p-4 rounded bg-light shadow" style="background-color: #F4F4F4;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label" style="color: #333333;"></label>
+                <input asp-for="Title" class="form-control" placeholder="Enter book title" style="border: 1px solid #4A90E2;" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label" style="color: #333333;"></label>
+                <input asp-for="Author" class="form-control" placeholder="Enter author name" style="border: 1px solid #4A90E2;" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label" style="color: #333333;"></label>
+                <input asp-for="Price" class="form-control" placeholder="Enter price" style="border: 1px solid #4A90E2;" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label" style="color: #333333;"></label>
+                <input asp-for="Genre" class="form-control" placeholder="Enter genre" style="border: 1px solid #4A90E2;" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Create" class="btn btn-lg" style="background-color: #50E3C2; color: white;" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn" style="background-color: #F5A623; color: white;">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
